@@ -32,7 +32,7 @@ async def on_message(message):
 
     if message.content in k :
         c=k.get(message.content)
-        for a in range(0,100):
+        for a in range(0,10):
             await message.channel.send(c)
             
     
