@@ -3,6 +3,7 @@ from discord.ext import commands
 import requests
 import json
 from requests.api import get
+import random
 client=discord.Client()
 
 def get_quote():
