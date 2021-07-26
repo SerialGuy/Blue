@@ -27,7 +27,7 @@ async def on_message(message):
     if message.content == "!quote":
         quote,author = get_quote()
         
-        embedVar = discord.Embed(title="QUOTE", color=0x00ff00)
+        embedVar = discord.Embed(title="QUOTE", color=random.randint(0, 0xffffff))
         embedVar.add_field(name=(quote), value= (author) , inline=False)
         await message.channel.send(embed=embedVar)
 
