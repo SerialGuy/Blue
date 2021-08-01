@@ -14,10 +14,11 @@ def get_quote():
     author = data[0]['a']
     return(quote,author)
 
-k={'!thunder':"<@248742722221899778>",'!scout':"<@269369856229376000>",'!killer':"<@444583334539165697>",
-'!rage':"<@337167925519712267>",'!taher':"<@713328216634425355>",'!serial':"<@250928149494235146>",'!tohan':"<@755245777915347055>",
-  '!flames':"<@249520197919178763>",'!assassin':"<@671290157818839071>"}
-c= "abc"
+k={'thunder':"<@248742722221899778>",'scout':"<@269369856229376000>",'killer':"<@444583334539165697>",
+'rage':"<@337167925519712267>",'taher':"<@713328216634425355>",'serial':"<@250928149494235146>",'tohan':"<@755245777915347055>",
+  'flames':"<@249520197919178763>",'assassin':"<@671290157818839071>"}
+f= "abc"
+p="ok"
 
 @client.event
 async def on_ready():
@@ -37,7 +38,20 @@ async def on_message(message):
         for a in range(0,10):
             await message.channel.send(c)
             
-    
+    if message.content.startswith("!tag"):
+        d=message.content
+        n=d.find(" ",5,20)
+        if d[5:n] in k:
+            g=d[n+1:]
+            g=int(g)          
+            f=k.get(d[5:n])
+            for a in range(0,g):
+                await message.channel.send(f)
+        else:
+            g=10
+            p=k.get(d[5:])
+            for a in range(0,g):
+                await message.channel.send(p)
     
         
     if message.content == "!watt":
