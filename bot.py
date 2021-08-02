@@ -42,9 +42,9 @@ async def on_message(message):
             g=int(g) 
             if g>251:
                 await message.channel.send("No. Cannot be larger than 250")
-                break
-            else:
                 continue
+            else:
+                break
             f=k.get(d[5:n])
             for a in range(0,g):
                 await message.channel.send(f)
