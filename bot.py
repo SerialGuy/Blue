@@ -16,7 +16,7 @@ def get_quote():
 
 k={'thunder':"<@248742722221899778>",'scout':"<@269369856229376000>",'killer':"<@444583334539165697>",
 'rage':"<@337167925519712267>",'taher':"<@713328216634425355>",'serial':"<@250928149494235146>",'tohan':"<@755245777915347055>",
-  'flames':"<@249520197919178763>",'assassin':"<@671290157818839071>"}
+  'flames':"<@249520197919178763>",'assassin':"<@671290157818839071>",'adib':"<@840566992443277402>",'abesh':"<@748602930931957763>"}
 f= "abc"
 p="ok"
 
@@ -33,10 +33,6 @@ async def on_message(message):
         embedVar.add_field(name=(quote), value= (author) , inline=False)
         await message.channel.send(embed=embedVar)
 
-    if message.content in k :
-        c=k.get(message.content)
-        for a in range(0,10):
-            await message.channel.send(c)
             
     if message.content.startswith("!tag"):
         d=message.content
