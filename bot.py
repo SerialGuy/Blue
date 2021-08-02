@@ -40,7 +40,7 @@ async def on_message(message):
         if d[5:n] in k:
             g=d[n+1:]
             g=int(g) 
-            if g>251:
+            if g>250:
                 await message.channel.send("No. Cannot be larger than 250")
             else:
                 f=k.get(d[5:n])
