@@ -36,7 +36,7 @@ async def on_message(message):
         if d[5:n-1].startswith("<"):
             if d[-1] !=">":
 
-                g=d[n:]
+                g=d[n-1:]
                 g=int(g)  
                 if g>250:
                     await message.channel.send("huge no.")
