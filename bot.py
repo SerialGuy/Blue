@@ -14,9 +14,6 @@ def get_quote():
     author = data[0]['a']
     return(quote,author)
 
-k={'thunder':"<@248742722221899778>",'scout':"<@269369856229376000>",'killer':"<@444583334539165697>",
-'rage':"<@337167925519712267>",'taher':"<@713328216634425355>",'serial':"<@250928149494235146>",'tohan':"<@755245777915347055>",
-  'flames':"<@249520197919178763>",'assassin':"<@671290157818839071>",'adib':"<@840566992443277402>",'abesh':"<@748602930931957763>"}
 f= "abc"
 p="ok"
 
@@ -33,24 +30,26 @@ async def on_message(message):
         embedVar.add_field(name=(quote), value= (author) , inline=False)
         await message.channel.send(embed=embedVar)
 
-            
     if message.content.startswith("!tag"):
         d=message.content
         n=d.find(" ",5,20)
-        if d[5:n] in k:
-            g=d[n+1:]
-            g=int(g) 
-            if g>250:
-                await message.channel.send("No. Cannot be larger than 250")
+        if d[5:n-1].startswith("<"):
+            if d[-1] !=">":
+
+                g=d[n:]
+                g=int(g)  
+                if g>250:
+                    await message.channel.send("huge no.")
+                else:          
+                    f=d[5:n-1]
+                    for a in range(0,g):
+                        await message.channel.send(f)
             else:
-                f=k.get(d[5:n])
+                g=10
+                p=d[5:]
                 for a in range(0,g):
-                    await message.channel.send(f)
-        else:
-            g=10
-            p=k.get(d[5:])
-            for a in range(0,g):
-                await message.channel.send(p)
+                    await message.channel.send(p)       
+
     
         
     if message.content == "!watt":
