@@ -32,16 +32,15 @@ async def on_message(message):
 
     if message.content.startswith("!tag"):
         d=message.content
-        n=d.find(" ",5,20)
-        if d[5:n-1].startswith("<"):
+        n=d.find(" ",5,50)
+        if d[5:n].startswith("<"):
             if d[-1] !=">":
-
-                g=d[n-1:]
+                g=d[n+1:]
                 g=int(g)  
                 if g>250:
                     await message.channel.send("huge no.")
                 else:          
-                    f=d[5:n-1]
+                    f=d[5:n]
                     for a in range(0,g):
                         await message.channel.send(f)
             else:
