@@ -23,6 +23,15 @@ async def on_ready():
     
 @client.event
 async def on_message(message):
+    m=message.content
+    m=m.lower()
+    m=m.split()
+    w=0
+    if "martha" in m:
+        while w<10:
+            w+=1
+            await message.channel.send("BINOD")
+            
     if message.content == "!quote":
         quote,author = get_quote()
         
