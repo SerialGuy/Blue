@@ -4,6 +4,7 @@ import requests
 import json
 from requests.api import get
 import random
+import env
 client=discord.Client()
 
 def get_quote():
@@ -65,4 +66,4 @@ async def on_message(message):
 
 
 
-client.run('NzM0MzQ4NTg5MTQwMTQ4MjQ0.XxQZaw.jLqNY7x84vhc-L4Agx0jFNWTEYU')
+client.run(SECURE_KEY)
